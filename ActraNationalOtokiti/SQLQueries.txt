@@ -1,0 +1,33 @@
+﻿1. Write a Query to provide the Production details in Canada with the Total cost.
+
+SELECT p.Name, p.Price, s.Quantity, p.Price * s.Quantity AS TotalCost
+
+FROM Product p
+
+JOIN Sales s ON p.ID = s.ProductId
+
+WHERE s.Country = 'Canada';
+
+
+2. Which Product sold the most items
+
+SELECT Name, SUM(Quantity) AS Total
+
+FROM Product
+
+JOIN Sales
+
+ON Product.ID = Sales.ProductId
+
+GROUP BY Name
+
+ORDER BY Total DESC;
+
+4. Code Recognition for WORDLE
+- No reprating letters
+- The answer is a Noun or a Verb
+- The words are in the 1st and 4th position
+- A sign or measurement of something
+
+August 15th is INDEX, August 16th word will likely end in EX - ANNEX, LATEX, CODEX
+I saw a code on Github which tries to find the word for the day, however, sample words must be entered to try guessing the word for the day.
